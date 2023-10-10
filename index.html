@@ -12,26 +12,15 @@
 	<div id="container">
 		<div id="content">
 			<p>Enter the plugin's slug, for example 'hello-dolly'.</p>
-			<form id="form">
-				<input type="text" id="slug"><br>
+			<form id="form" method="get" action="https://playground.wordpress.net">
+				<input type="hidden" name="login" value="1">
+				<input type="hidden" name="url" value="/wp-admin/plugins.php">
+				<input type="text" id="slug" name="plugin"><br>
 				<input type="submit" id="submit" value="Preview">
 			</form>
 		</div>
-		<p id="credits">&copy; <a href="https://roytanck.com">Roy Tanck</a></p>
+		<p id="credits">&copy; <a href="https://roytanck.com">Roy Tanck</a>, code available on <a href="https://github.com/roytanck/plugin-preview">Github</a>.</p>
 	</div>
-	<script>
-		document.querySelector( '#form' ).addEventListener( 'submit', ( event ) => {
-			event.preventDefault();
-			let slug = document.querySelector( '#slug' ).value;
-			let url = 'https://playground.wordpress.net/?plugin=' + slug + '&login=1&url=/wp-admin/plugins.php';
-			document.location = url;
-		} );
-		document.querySelector( '#submit' ).addEventListener( 'click', ( event ) => {
-			event.preventDefault();
-			let slug = document.querySelector( '#slug' ).value;
-			let url = 'https://playground.wordpress.net/?plugin=' + slug + '&login=1&url=/wp-admin/plugins.php';
-			document.location = url;
-		} );
-	</script>
 </body>
+
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>WordPress plugin preview</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	<div id="container">
+		<div id="content">
+			<p>Enter the plugin's slug, for example 'hello-dolly'.</p>
+			<input type="text" id="slug" /><br />
+			<input type="submit" id="submit" value="Preview" />
+		</div>
+		<p id="credits">&copy; <a href="https://roytanck.com">Roy Tanck</a></p>
+	</div>
+	<script>
+		document.querySelector( '#submit' ).addEventListener( 'click', ( event ) => {
+			event.preventDefault();
+			let slug = document.querySelector( '#slug' ).value;
+			let url = 'https://playground.wordpress.net/?plugin=' + slug + '&login=1&url=/wp-admin/plugins.php';
+			document.location = url;
+		} );
+	</script>
+</body>
+
+</html>
